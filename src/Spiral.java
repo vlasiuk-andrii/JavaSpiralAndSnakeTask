@@ -1,10 +1,8 @@
-/*
-public class Spiral {
-    MainClass object = new MainClass();
-    //int COL = object.matrix.length;
-    //int ROW = object.matrix.length;
 
-    void printTopRight(int a[][COL], int x1, int y1, int x2, int y2) {
+public class Spiral {
+    MainClass objectMain = new MainClass();
+
+    void printTopRight(int a[][], int x1, int y1, int x2, int y2) {
         int i = 0, j = 0;
 
         for(i = x1; i<=x2; i++) {
@@ -20,7 +18,7 @@ public class Spiral {
         }
     }
 
-    void printBottomLeft(int a[][COL], int x1, int y1, int x2, int y2) {
+    void printBottomLeft(int a[][], int x1, int y1, int x2, int y2) {
         int i = 0, j = 0;
 
         for(i = x2; i>=x1; i--) {
@@ -36,9 +34,8 @@ public class Spiral {
         }
     }
 
-    void printSpiral(int arr[][COL]) {
-        printTopRight(arr,0,0,COL-1,ROW-1);
+    void printSpiral(int arr[][], int n) {
+        printTopRight(arr,0,0,n-1,n-1);
         System.out.printf("\n");
     }
 }
-*/

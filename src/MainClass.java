@@ -68,24 +68,8 @@ public class MainClass {
         }
         //Print snake into the file
 
-        for (int i=0; i<matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (j == matrix[i].length - 1) {
-                    System.out.print(matrix[i][j]);
-                } else {
-                    if (matrix[i][j]<10){
-                        System.out.print(matrix[i][j] + "  ");
-                    } else {
-                        System.out.print(matrix[i][j] + " ");
-                    }
-                }
-            }
-            System.out.println();
-        }
-        //Print matrix into the console
-
-        SecondAttempt object = new SecondAttempt();
-        object.get_circ_arr(num, matrix);
+        Spiral object = new Spiral();
+        object.printSpiral(matrix, num);
 
         writer.close();
 

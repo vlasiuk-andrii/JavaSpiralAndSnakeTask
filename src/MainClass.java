@@ -1,6 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,51 +24,11 @@ public class MainClass {
         int z = 1;
         //Create matrix
 
-        PrintWriter writer = null;
-        try {
-            writer = new PrintWriter("Text_file.txt", "UTF-8");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        //Create file
-
-        for (int i=0; i<matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j]=z++;
-                if (j == matrix[i].length - 1) {
-                   writer.print(matrix[i][j]);
-                } else {
-                    if (matrix[i][j]<10){
-                        writer.print(matrix[i][j] + "  ");
-                    } else {
-                        writer.print(matrix[i][j] + " ");
-                    }
-                }
-            }
-           writer.println();
-        }
-        //Print matrix into the file
-
-        writer.print("Snake:");
-        for (int q=matrix.length-1; q>=0; q=q-2) {
-            for (int k=matrix[q].length-1; k>=0; k--){
-                writer.print(matrix[q][k]+" ");
-            }
-            if (0==q){
-                break;
-            }
-            for (int k=0; k<matrix[q-1].length; k++){
-                writer.print(matrix[q-1][k]+" ");
-            }
-        }
-        //Print snake into the file
-
-        Spiral object = new Spiral();
+        Operator object = new Operator();
+        object.printMatrix(matrix, z);
+        object.addSnake(matrix);
         object.printSpiral(matrix, num);
 
-        writer.close();
 
     }
 }

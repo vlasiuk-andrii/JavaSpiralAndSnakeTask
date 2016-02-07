@@ -7,32 +7,30 @@ public class Operator {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter("Text_file.txt", "UTF-8");
-        } catch (FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+            } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-        }
+            }
         //Create file
 
         for (int i=0; i<matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j]=z++;
-                if (j == matrix[i].length - 1) {
-                    writer.print(matrix[i][j]);
-                } else {
-                    if (matrix[i][j]<10){
-                        writer.print(matrix[i][j] + "  ");
+                matrix[i][j]=(int)(Math.random()*201-100);
+                if (matrix[i][j]<0) {
+                    writer.print(matrix[i][j]+" ");
                     } else {
-                        writer.print(matrix[i][j] + " ");
+                    if (matrix[i][j]>0){
+                        writer.print(matrix[i][j]+"  ");
+                        }
                     }
                 }
-            }
             writer.println();
-        }
+            }
         //Print matrix into the file
-
         writer.close();
-    }
+        }
+
 
     void addSnake (int[][] matrix){
         try
